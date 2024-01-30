@@ -1,9 +1,9 @@
 # Exercício 1: Criação de Casas Nobres
 
 1. **Crie uma classe `NobleHouse`** com os seguintes atributos privados:
-   - uma string representando o nome da casa nobre (private).
-   - uma string representando o lema da casa nobre (private).
-   - métodos getters
+   - uma string representando o nome da casa nobre.
+   - uma string representando o lema da casa nobre.
+   
 
 2. **Defina um método construtor** na classe `NobleHouse` que aceita os parâmetros que você criou e os atribui aos atributos correspondentes.
 
@@ -11,10 +11,10 @@
    - uma string representando o nome do herdeiro.
    - um número representando a idade do herdeiro.
    - um número representando a posição do herdeiro na linha de sucessão da casa nobre.
-   - métodos para acessar esses atributos (getters).
+   
 
 4. **Crie uma classe `Heir`** que implementa a interface `HerdeiroCasa`que contenha o seguinte:
-   - os atributos devem ser private
+   - os atributos devem ser public
 
 
 # Exercício 2: Extensão das Casas Nobres
