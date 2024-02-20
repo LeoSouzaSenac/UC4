@@ -1,0 +1,21 @@
+Fácil
+
+1. Escreva um programa que imprima os números de 1 a 5 usando um loop for.
+2. Enunciado: Escreva um programa que imprima as propriedades de um objeto usando um loop for...in.
+Crie um objeto com pelo menos 3 atributos à sua escolha.
+3. Escreva um programa que imprima os elementos de um array usando o método forEach(). Crie um array
+com pelo menos 5 itens à sua escolha.
+4. Escreva um programa que imprima os caracteres de uma string usando um loop for...of. 
+A string é de sua escolha.
+
+
+Médio
+
+1. Escreva um programa que calcule a média dos números em um array de números.
+Use um loop for.
+
+2. Escreva um programa que conte o número de propriedades em um objeto. 
+
+3. Escreva um programa que encontre o maior número em um array usando o método forEach().
+
+4. Escreva um programa que inverta uma string usando um loop for...of.
