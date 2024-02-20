@@ -1,21 +1,29 @@
 Fácil
 
 1. Escreva um programa que imprima os números de 1 a 5 usando um loop for.
-2. Enunciado: Escreva um programa que imprima as propriedades de um objeto usando um loop for...in.
-Crie um objeto com pelo menos 3 atributos à sua escolha.
+2. Escreva um programa que imprima todas as chaves e os valores de um objeto usando . Crie um objeto com pelo menos 3 pares chave-valor à sua escolha.
 3. Escreva um programa que imprima os elementos de um array usando o método forEach(). Crie um array
 com pelo menos 5 itens à sua escolha.
 4. Escreva um programa que imprima os caracteres de uma string usando um loop for...of. 
 A string é de sua escolha.
+5.Escreva um programa que calcule a soma dos números pares de 1 a 10 usando um loop for. Use um if dentro do loop para verificar se o número é par.
+
+6.Escreva um programa que encontre o menor número em um array usando um loop for. Crie um array com pelo menos 5 números.
 
 
 Médio
+1.Escreva um programa que verifique se um determinado número é primo ou não. Crie um array, preencha-o com números e use a estrutura de for mais indicada.
 
-1. Escreva um programa que calcule a média dos números em um array de números.
-Use um loop for.
+2.Escreva um programa que conte o número de vogais (a, e, i, o, u) em uma string.
 
-2. Escreva um programa que conte o número de propriedades em um objeto. 
+3.Escreva um programa que calcule a média das notas armazenadas em um array. Cada item é uma nota obtida pelo aluno.
 
-3. Escreva um programa que encontre o maior número em um array usando o método forEach().
+4.Escreva um programa que calcule a média das notas armazenadas em um objeto. Cada propriedade do objeto representa uma matéria e seu valor é a nota obtida pelo aluno. 
 
-4. Escreva um programa que inverta uma string usando um loop for...of.
+5.Escreva um programa que verifique se um determinado elemento existe em um array de objetos.
+
+6. Escreva um programa que conte o número de propriedades em um objeto. 
+
+7. Escreva um programa que encontre o maior número em um array usando o método forEach().
+
+8. Escreva um programa que inverta uma string usando um loop for...of.
