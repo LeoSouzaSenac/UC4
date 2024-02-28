@@ -9,7 +9,7 @@ Para facilitar o controle dos livros, você decide utilizar enums para represent
 - **Atrasado:** Quando o livro não é devolvido dentro do prazo estipulado.
 - **Reservado:** Quando um usuário solicita reservar o livro, mas ainda não o pegou.
 
-Além disso, cada livro possui informações como título, autor, ano de publicação, e uma lista de gêneros aos quais pertence (ficção científica, romance, fantasia, etc.). Os gêneros também devem ser representados por enums para facilitar a categorização e consulta.
+Além disso, cada livro possui informações como título, autor,  e uma lista de gêneros aos quais pertence (ficção científica, romance, fantasia, etc.). Os gêneros também devem ser representados por enums para facilitar a categorização e consulta.
 
 O seu código também deve retornar as seguintes listas:
 
