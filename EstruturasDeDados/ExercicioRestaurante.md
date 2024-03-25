@@ -2,7 +2,7 @@
 
 Um restaurante deseja implementar um sistema para gerenciar os pedidos dos clientes. O sistema deve ser capaz de adicionar pedidos, preparar os pedidos na ordem em que foram recebidos e informar quando um pedido estiver pronto para ser entregue aos clientes.
 
-O restaurante possui três áreas distintas para o preparo dos pedidos: cozinha, bar e sobremesas. Cada área é responsável por preparar um tipo específico de pedido:
+O restaurante possui prepara três tipos diferentes de itens:
 
 - A cozinha prepara os pratos principais.
 - O bar prepara as bebidas alcoólicas e não alcoólicas.
@@ -16,4 +16,4 @@ Implemente um sistema em TypeScript que utilize listas, filas e pilhas para gere
 
 3. **Informar quando um pedido estiver pronto:** O sistema deve ser capaz de informar quando um pedido estiver pronto para ser entregue aos clientes. Isso pode ser feito mostrando o próximo pedido na fila de preparo correspondente.
 
-Implemente as classes e métodos necessários para satisfazer os requisitos acima, utilizando listas para armazenar os pedidos, filas para gerenciar a preparação dos pedidos e pilhas para o preparo de cada área do restaurante (cozinha, bar e sobremesas).
+Implemente as classes e métodos necessários para satisfazer os requisitos acima, utilizando as estruturas de dados mais adequadas para cada situação.
