@@ -1,5 +1,4 @@
 // Classe Player para representar o jogador
-// Classe Player para representar o jogador
 class Player {
     x: number; // Posição horizontal do jogador
     y: number; // Posição vertical do jogador
@@ -65,6 +64,7 @@ class Game {
     private speed: number; // Velocidade dos obstáculos
     private obstacleInterval: number; // Intervalo entre a criação de novos obstáculos
     private lastObstacleTime: number; // Último momento em que um obstáculo foi criado
+    private score: number; // Pontuação do jogador
     private gameOver: boolean; // Indica se o jogo acabou
     private canvas: HTMLCanvasElement;
     private ctx: CanvasRenderingContext2D | null;
@@ -75,8 +75,9 @@ class Game {
         this.player = new Player(canvas, ctx); // Inicializa o jogador
         this.obstacles = []; // Inicializa o array de obstáculos vazio
         this.speed = 2; // Define a velocidade inicial dos obstáculos
-        this.obstacleInterval = 500; // Define o intervalo inicial entre a criação de novos obstáculos (em milissegundos)
+        this.obstacleInterval = 2000; // Define o intervalo inicial entre a criação de novos obstáculos (em milissegundos)
         this.lastObstacleTime = 0; // Inicializa o último momento em que um obstáculo foi criado
+        this.score = 0; // Inicializa a pontuação do jogador
         this.gameOver = false; // Define o estado inicial do jogo como não finalizado
         canvas.addEventListener('mousemove', this.movePlayer.bind(this)); // Adiciona um ouvinte de evento para mover o jogador com o mouse
 
@@ -109,30 +110,58 @@ class Game {
     }
 
     // Método para atualizar o estado do jogo
-    update(): void {
-        if (this.gameOver) return; // Se o jogo acabou, não atualiza mais
+update(): void {
+    if (this.gameOver) return; // Se o jogo acabou, não atualiza mais
 
-        // Atualiza a posição dos obstáculos
-        for (const obstacle of this.obstacles) {
-            obstacle.update(this.speed);
-            // Verifica se houve uma colisão entre o jogador e um obstáculo
-            if (this.checkCollision(obstacle)) {
-                this.gameOver = true; // Marca o jogo como finalizado
-                console.log('Game Over!'); // Exibe mensagem de Game Over no console
-                break; // Interrompe o loop, pois o jogo acabou
-            }
+    // Variável para controlar se um obstáculo passou sem colidir
+    let obstaclePassed = false;
+
+    // Atualiza a posição dos obstáculos
+    for (const obstacle of this.obstacles) {
+        obstacle.update(this.speed);
+        // Verifica se houve uma colisão entre o jogador e um obstáculo
+        if (this.checkCollision(obstacle)) {
+            this.gameOver = true; // Marca o jogo como finalizado
+            alert('Game Over! Pontuação: ' + this.score); // Exibe mensagem de Game Over com a pontuação no alerta
+            return; // Sai da função de atualização, pois o jogo acabou
         }
-
-        // Limpa o canvas
-        this.clearCanvas();
-
-        // Desenha o jogador
-        this.player.draw();
-
-        // Desenha os obstáculos
-        for (const obstacle of this.obstacles) {
-            obstacle.draw();
+        // Verifica se o obstáculo ultrapassou o jogador sem colidir
+        if (obstacle.y > this.canvas.height - 20 && !this.checkCollision(obstacle)) {
+            obstaclePassed = true;
         }
+    }
+
+    // Incrementa a pontuação se um obstáculo passou sem colidir
+    if (obstaclePassed) {
+        this.score++;
+    }
+
+    // Limpa o canvas
+    this.clearCanvas();
+
+    // Desenha o jogador
+    this.player.draw();
+
+    // Desenha os obstáculos
+    for (const obstacle of this.obstacles) {
+        obstacle.draw();
+    }
+
+    // Desenha a pontuação na tela
+    this.drawScore();
+
+    // Chamamos o método para criar os obstáculos
+    this.createObstacles();
+}
+
+
+
+    // Método para desenhar a pontuação na tela
+    drawScore(): void {
+        if (this.ctx === null) return; // Verifica se o contexto de renderização está disponível
+        this.ctx.fillStyle = 'black'; // Define a cor de preenchimento como preto
+        this.ctx.font = '20px Arial'; // Define a fonte do texto
+        this.ctx.fillText('Pontuação: ' + this.score, 10, 30); // Desenha o texto da pontuação na posição especificada
     }
 
     // Método para verificar colisões entre o jogador e os obstáculos
